@@ -15,6 +15,7 @@ def plot_surrepresentation(candidat_nom, score_departements, top_n=10):
         .sort_values('surrepresentation')
     )
     
+    
     nom_court = candidat_nom.split()[-1]  
     
     fig, ax = plt.subplots(figsize=(9, 5))
@@ -33,7 +34,7 @@ def plot_surrepresentation(candidat_nom, score_departements, top_n=10):
         ax.text(val + offset, i, f"{val:.1f}%", va='center', ha=ha, fontsize=8)
     
     plt.tight_layout()
-    plt.show()
+    plt.show() 
 
 
 
