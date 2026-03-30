@@ -2,15 +2,15 @@ import matplotlib.pyplot as plt
 
 def plot_surrepresentation(candidat_nom, score_departements, top_n=10):
     
-    data = score_departements[score_departements['candidat'] == candidat_nom].copy()
+    score = score_departements[score_departements['candidat'] == candidat_nom].copy()
     
-    if data.empty:
+    if score.empty:
         print(f"Candidat '{candidat_nom}' introuvable.")
         return
     
     # Top N en valeur absolue
     top = (
-        data.reindex(data['surrepresentation'].abs().sort_values(ascending=False).index)
+        score.reindex(score['surrepresentation'].abs().sort_values(ascending=False).index)
         .head(top_n)
         .sort_values('surrepresentation')
     )
